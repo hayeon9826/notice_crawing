@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 
-Selenium::WebDriver::Chrome::Service.driver_path = `which chromedriver-helper`.chomp # 설치한 크롬 드라이버 사용
+Selenium::WebDriver::Chrome::Service.driver_path = "/usr/local/Caskroom/chromedriver/77.0.3865.40/chromedriver"# 설치한 크롬 드라이버 사용
 #Selenium::WebDriver::Chrome::Service.driver_path = '/Users/ju-young/.rbenv/shims/chromedriver-helper'
 #크롬 창 열지않고 크롤링 (헤드리스)
 options = Selenium::WebDriver::Chrome::Options.new # 크롬 헤드리스 모드 위해 옵션 설정

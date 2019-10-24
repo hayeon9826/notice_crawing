@@ -1,5 +1,7 @@
-<%= @post.id %> 번째 게시물
+<%= @post.id %> 번째 게시물<hr>
 
   제목: <%= @post.title %><br />
   내용 : <%= @post.content %><br />
-  작성자 : <%= @post.name %><br />
+  작성자 : <%= @post.name %><br /><br>
+
+  <%= link_to "뒤로가기", root_path %>

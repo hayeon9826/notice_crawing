@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>공지</th>
+    <th>링크</th>
+  </tr>
+<% article.each do |p| %>
+  <tr>
+    <td><%= p.title %></td>
+    <td><a href = '<%= p.url %>'>바로가기</a></td>
+  </tr>
+<% end %>
+</table>

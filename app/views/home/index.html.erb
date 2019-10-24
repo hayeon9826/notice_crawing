@@ -15,40 +15,23 @@
         <td><%= post.name %></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to '보기', post %></td>
+        <td><%= link_to '수정', edit_post_path(post) %></td>
         <td><%= link_to '삭제', post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>
 <% else %>
-    <p>아직 게시판이 음슴</p>
+    <p>아직 게시판이 없습니다</p>
 <% end %>
  
 <hr>
 
 <% if @articles.present? %> 
-<h3>게시판</h3>
-  <table>
-    <tr>
-      <th>링크</th>
-      <th>제목</th>
-      <th>사이트</th>
-      <th>삭제</th>
-    </tr>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.url %></td>
-        <td><%= article.title %></td>
-        <td><%= article.site %></td>
-        <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
-    <% end %>
-  </table>
+<%= link_to '공지 확인', articles_path %>
 <% else %>
-    <p>아직 크롤링 한게 음슴</p>
-<% end %><br>
+    <p>아직 크롤링 한게 없습니다</p>
+<% end %><br><br>
 
  
-<%= link_to '게시판', new_post_path %> |
-<%= link_to '크롤링', new_article_path %>
+<%= link_to '게시판', new_post_path %>
