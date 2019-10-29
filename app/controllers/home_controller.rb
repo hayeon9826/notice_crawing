@@ -3,4 +3,8 @@ class HomeController < ApplicationController
     @posts = Post.all
     @articles = Article.all
   end
+
+  def new
+    @notice = Notice.all
+  end
 end

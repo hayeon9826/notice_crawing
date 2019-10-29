@@ -26,6 +26,7 @@ class Article < ApplicationRecord
 
 
     @content.each do |t|
+      # @date = t.find_element
       @title = t.find_element(tag_name: "a").text
       @url = t.find_element(tag_name: "a").attribute("href")
       # puts "#{@title} 이랑 #{@url}"

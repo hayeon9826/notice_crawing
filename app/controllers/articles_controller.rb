@@ -1,13 +1,17 @@
 class ArticlesController < ApplicationController
+
   def index
+    # byebug
     @article = Article.all
     if params[:site] == "snu"
       @article = Article.snu
-      @article = Article.all
+      # byebug
+      @article = Article.all.order(created_at: :asc)
       respond_to do |format|
         format.js
       end
     end
+    @article = @article.page(params[:page]).per(10)
   end
 
   def new

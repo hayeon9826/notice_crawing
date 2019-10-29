@@ -15,16 +15,17 @@ options.add_argument('--headless') # 크롬 헤드리스 모드 사용 위해 he
 
 #공지사항 제목 잡기
 sleep(1);
-@browser.find_element(css: "#snu_gsis > div.text-center > ul > li:nth-child(3) > a").click
+# @browser.find_element(css: "#snu_gsis > div.text-center > ul > li:nth-child(3) > a").click
 
 @content = @browser.find_elements(css: '#upcoming_events > div:nth-child(2) > div > table > tbody > tr')
-#upcoming_events > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a
-puts "#{@content.map{|x| x }}"
+# #upcoming_events > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a
+# puts "#{@content.map{|x| x }}"
 
 @content.each do |t|
+  @date = t.find_element(css: "td:nth-child(1)").text
   @title = t.find_element(tag_name: "a").text
   @url = t.find_element(tag_name: "a").attribute("href")
-  puts "#{@title} 이랑 #{@url}"
+  puts "#{@date}"
 end
 
 @browser.quit

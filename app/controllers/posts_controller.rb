@@ -1,11 +1,16 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
   end
 
   def new
-    @post = Post.new
+    if current_user
+      @post = Post.new
+    else
+     flash[:alert] = "글 작성은 로그인이후 사용 가능합니다"
+    end
   end
 
   def show

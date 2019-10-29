@@ -1,2 +1,4 @@
-<h1>Home#new</h1>
-<p>Find me in app/views/home/new.html.erb</p>
+<h1>공지</h1>
+<% @notice.each do |p|%>
+  <h3>제목: <%= p.title %> <h3><hr>
+<% end %>

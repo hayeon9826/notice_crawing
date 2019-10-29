@@ -1,6 +1,7 @@
-<h3> 크롤링 사이트</h3>
+<%= link_to "Asian Analyse", root_path, style: "font-size: 30px;"%><br><br>
 <%= link_to "새로고침", articles_path(site: "snu"), remote: true %>
 
 <div class="article_list">
   <%= render "articles/table", article: @article %>
 </div>
+<%= paginate @article %>
